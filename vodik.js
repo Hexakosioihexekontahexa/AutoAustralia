@@ -16,7 +16,7 @@ setInterval(function() {
     // Проверяем содержимое элемента <a>
     var linkElement = document.querySelector('a.yt-simple-endpoint.style-scope.yt-formatted-string');
 
-    if (linkElement.textContent.includes("Richi King")) {
+    if (linkElement && linkElement.textContent.includes("Richi King")) {
         // Проверяем значение атрибута "aria-pressed" для кнопки Next
         var dislikeButton = document.querySelector('#menu .YtDislikeButtonViewModelHost button, #segmented-dislike-button button, #dislike-button button');
 
@@ -28,13 +28,10 @@ setInterval(function() {
             console.log("Австралийская поддержка оказана, хя-хя!");
         } else {
             dislikeButton.click();
-            const anotherSleep = async () => {
-                await sleep(500);
-            }
-            dislikeButton.click();
-            console.log("Австралийский лайк перенажат.");
+            setTimeout(() => { dislikeButton.click(); }, 500);
+            setTimeout(() => { console.log("Австралийский лайк перенажат."); }, 500);
         }
     } else {
-        console.log("Это не Королевский контент/трэш за авторством Водика.");
+        //console.log("Это не Королевский контент/трэш за авторством Водика.");
     }
 }, 10000); //Запуск скрипта каждые 10 секунд
