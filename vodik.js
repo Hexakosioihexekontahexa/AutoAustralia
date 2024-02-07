@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChuhanAutoDislike
 // @namespace    http://tampermonkey.net/
-// @version      0.3
+// @version      0.2.1
 // @description  Поможем Водику стать мИдийной личностью и почувствовать на себе эту ношу. Авто-Австралия на каждое королевское видео.
 // @author       Hexakosioihexekontahexa
 // @match        https://www.youtube.com/*
@@ -27,9 +27,7 @@ setInterval(function() {
             dislikeButton.click();
             console.log("Австралийская поддержка оказана, хя-хя!");
         } else {
-            dislikeButton.click();
-            setTimeout(() => { dislikeButton.click(); }, 500);
-            setTimeout(() => { console.log("Австралийский лайк перенажат."); }, 500);
+            console.log("Австралийский лайк уже нажат.");
         }
     } else {
         //console.log("Это не Королевский контент/трэш за авторством Водика.");
