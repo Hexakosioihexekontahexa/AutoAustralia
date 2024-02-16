@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         ChuhanAutoDislike
 // @namespace    http://tampermonkey.net/
-// @version      0.2.1
+// @version      0.4
 // @description  Поможем Водику стать мИдийной личностью и почувствовать на себе эту ношу. Авто-Австралия на каждое королевское видео.
 // @author       Hexakosioihexekontahexa
 // @match        https://www.youtube.com/*
@@ -16,7 +16,7 @@ setInterval(function() {
     // Проверяем содержимое элемента <a>
     var linkElement = document.querySelector('a.yt-simple-endpoint.style-scope.yt-formatted-string');
 
-    if (linkElement && linkElement.textContent.includes("Richi King")) {
+    if ((linkElement && linkElement.textContent.includes("Richi King")) || (linkElement && linkElement.textContent.includes("Ричи Кинг"))) {
         // Проверяем значение атрибута "aria-pressed" для кнопки Next
         var dislikeButton = document.querySelector('#menu .YtDislikeButtonViewModelHost button, #segmented-dislike-button button, #dislike-button button');
 
